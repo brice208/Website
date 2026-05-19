@@ -99,6 +99,48 @@
                     if (type === "builder") {
                         resultText = " 🛠️ You’d thrive as an Engineer, Mechanic, or Builder!";
                     }
+
+                    else if (type=== "creator") {
+                        resultText = "🎨 You’d shine as a Designer, YouTuber, or Artist!";
+                    }
+
+                    else if (type === "helper") {
+                        resultText = "💙 You’d make a great Teacher, Nurse, or Counselor!";
+                    }
+
+                    else if (type === "thinker") {
+                        resultText = "🧠 You’d dominate as a Programmer, Analyst, or Scientist!"
+                    }
+                    document.getElementById("quiz").classList.add("hidden");
+
+                    let resultBox = document.getElementById("result");
+                    resultBox.innerHTML = resultText;
+                    resultBox.classList.remove("hidden");
+
+                    document.getElementById("shareBtn").classList.remove("hidden");
+                    document.getElementById("restart").classList.remove("hidden");
+
+                    // Confetti effect
+                    confetti({
+                        particleCount: 150,
+                        spread: 90,
+                        origin: { y: 0.6 }
+                    });
+                }
+
+                function shareResult() {
+
+                    let text = document.getElementById("result").innerText;
+
+                    if (navigator.share) {
+                        navigator.share({
+                            title: "Career Personality Quiz",
+                            text: text
+                        });
+                    }
+                    else {
+                        alert("Sharing not supported on this browser.");
+                    }
                 }
              </script>
     </body>
