@@ -12,10 +12,95 @@
                 color: white;
                 padding:20px;
             }
+
+            .card {
+                background: rgba(255,255,255,0.08);
+                padding: 20px;
+                border-radius: 16px;
+                max-width: 500px;
+                margin: auto;
+                backdrop-filter: blur(10px);
+                transition: all 0.4s ease;
+            }
+
+            h1 { margin-bottom: 10px; }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+                padding: 14px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: transform 0.15s ease;
+            }
+
+            .btn:hover {
+                transform: scale(1.03);
+            }
+
+            #result {
+                font-size: 22px;
+                margin-top: 20px;
+            }
+
+            .small {
+                opacity: 0.7;
+                font-size: 14px;
+            }
+
+            .hidden { display: none; }
+
+            .share {
+                margin-top: 15px;
+                padding: 10px;
+                background: #4CAF50;
+                border-radius: 10px;
+                cursor: pointer;
+            }
         </style>
-
-
     </head>
 
+    <body>
+
+        <div class="card">
+            <h1>🎯 What Career Fits Your Energy?</h1>
+            <p class="small">Answer honestly… or chaotically 😈</p>
+            <div id="quiz">
+                <p id="q">What sounds most fun?</p>
+
+                <button class="btn" onclick="answer('builder')">Fixing or building things 🔧</button>
+                <button class="btn" onclick="answer('creator')">Making art or content 🎨</button>
+                <button class="btn" onclick="answer('helper')">Helping people 🧑‍🤝‍🧑</button>
+                <button class="btn" onclick="answer('thinker')">Solving puzzles 📊</button>
+            </div>
+
+            <div id="result" class="hidden"></div>
+
+            <div id="shareBtn" class="share hidden" onclick="shareResult()">
+                Share your result 📤
+            </div>
+
+            <div id="restart" class="share hidden" onclick="location.reload()" style="background:#ff4d4d;">
+                    Play again 🔄
+            </div>   
+             </div>
+
+             <!--Confetti Library-->
+             <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+             <script>
+                function answer(type) {
+
+                    let resultText = "";
+
+                    if (type === "builder") {
+                        resultText = " 🛠️ You’d thrive as an Engineer, Mechanic, or Builder!";
+                    }
+                }
+             </script>
+    </body>
     <
 </html>
